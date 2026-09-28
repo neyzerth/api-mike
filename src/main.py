@@ -4,8 +4,8 @@ from fastapi import FastAPI
 
 #Importacion de archivos previos
 from db.database import create_db_and_tables
-from api.v1.user import *
-from core.cors import setup_cors
+from api.v1.user_api import *
+# from core.cors import setup_cors
 
 
 """
@@ -27,6 +27,8 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan  # <-- Aquí está el cambio clave
 )
+
+# setup_cors(app)
 
 @app.get("/")
 def root():
